@@ -51,7 +51,7 @@ The project is composed of the following components:
 
 ## Project Structure
 
-```
+```bash
 ├── terraform/
 │   ├── main.tf                # Main Terraform configuration file
 │   ├── outputs.tf             # Terraform output configuration
@@ -63,7 +63,7 @@ The project is composed of the following components:
 ├── scripts/
 │   └── glue_job.py            # AWS Glue job script for batch processing
 └── README.md                  # Project readme file
-```
+```bash
 
 ## Getting Started
 
@@ -135,4 +135,4 @@ This project is licensed under the MIT License.
 
 ---
 
-Feel free to customize the content to better fit your project specifics!
+

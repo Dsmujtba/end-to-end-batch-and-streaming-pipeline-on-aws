@@ -51,7 +51,7 @@ The project is composed of the following components:
 
 ## Project Structure
 
-```bash
+
 ├── terraform/
 │   ├── main.tf                # Main Terraform configuration file
 │   ├── outputs.tf             # Terraform output configuration
@@ -78,7 +78,7 @@ The project is composed of the following components:
 
 1. **Clone the repository**:
 
-   ```bash
+   
    git clone https://github.com/yourusername/your-repository.git
    cd your-repository
    
@@ -91,16 +91,16 @@ The project is composed of the following components:
 
    Go to the `terraform/` folder and initialize Terraform:
 
-   ```bash
+   
    cd terraform
    terraform init
    
 
 4. **Apply Terraform changes**:
 
-   ```bash
+   
    terraform apply
-   ```
+   
 
 ## How It Works
 

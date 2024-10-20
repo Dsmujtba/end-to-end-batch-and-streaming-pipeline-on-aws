@@ -79,7 +79,7 @@ The project is composed of the following components:
 1. **Clone the repository**:
 
    
-   git clone https://github.com/yourusername/your-repository.git
+   git clone [https://github.com/yourusername/your-repository](https://github.com/Dsmujtba/End-to-End-Batch-and-Streaming-Pipeline-AWS).git
    cd your-repository
    
 

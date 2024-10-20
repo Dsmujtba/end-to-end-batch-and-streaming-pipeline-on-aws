@@ -28,7 +28,6 @@ The pipeline is divided into two main parts:
 - **Batch Pipeline**: Using AWS Glue for ETL and S3 for storage.
 - **Streaming Pipeline**: Using Kinesis Data Streams, Kinesis Firehose, and Lambda for real-time data processing.
 
-```
 
 ## Components
 
@@ -64,7 +63,7 @@ The project is composed of the following components:
 ├── scripts/
 │   └── glue_job.py            # AWS Glue job script for batch processing
 └── README.md                  # Project readme file
-```
+
 
 ## Getting Started
 
@@ -82,7 +81,7 @@ The project is composed of the following components:
    ```bash
    git clone https://github.com/yourusername/your-repository.git
    cd your-repository
-   ```
+   
 
 2. **Configure AWS credentials**:
 
@@ -95,7 +94,7 @@ The project is composed of the following components:
    ```bash
    cd terraform
    terraform init
-   ```
+   
 
 4. **Apply Terraform changes**:
 

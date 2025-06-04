@@ -1,5 +1,7 @@
 # End-to-End Batch and Streaming Data Pipeline on AWS for a Recommendation System
 
+**About This Project:** An end-to-end data pipeline I engineered on AWS, demonstrating the integration of batch (Glue, S3) and real-time streaming (Kinesis, Lambda, Firehose) processing to feed a recommendation system. This project showcases infrastructure automation with Terraform and the practical application of cloud services for scalable data ingestion, transformation, and storage, including vector embeddings for recommendations.
+
 ---
 
 This repository details an advanced data pipeline I designed and implemented on Amazon Web Services (AWS) to power a recommendation system. The solution robustly handles both **batch data processing** (for historical data and model training inputs like embeddings) and **real-time streaming data** (for user activity), showcasing a modern hybrid architecture. My focus was on leveraging serverless and managed AWS services for scalability, automating infrastructure deployment with Terraform, and building a system capable of generating timely user recommendations.
@@ -32,10 +34,15 @@ I designed the system with two distinct yet complementary data flows:
     * **Source:** Historical data (e.g., user-item interactions, item metadata) stored in Amazon S3.
     * **Processing:** An AWS Glue ETL job processes this data, potentially generating user/item embeddings or other features for the recommendation model.
     * **Storage:** Processed features and embeddings are stored, for example, in a vector database (conceptual in this project, could be RDS with pgvector, OpenSearch, etc.) or S3.
+
+    ![Batch Pipeline Architecture](./docs/de-c1w4-diagram-batch.drawio.png)
+
 2.  **Streaming Pipeline:**
     * **Source:** Real-time user activity (e.g., product views, clicks, purchases) is ingested into an AWS Kinesis Data Stream.
     * **Processing:** An AWS Lambda function consumes data from the Kinesis stream. It applies transformation logic, which could involve invoking a recommendation model (using pre-calculated embeddings from the batch pipeline) to generate personalized recommendations.
     * **Delivery:** AWS Kinesis Data Firehose takes the output from Lambda (recommendations) and delivers it to a designated Amazon S3 bucket in near real-time.
+
+    ![Streaming Pipeline Architecture](./docs/de-c1w4-diagram-stream.drawio.png)
 
 ## Technologies Leveraged:
 
@@ -51,7 +58,7 @@ I designed the system with two distinct yet complementary data flows:
 * `terraform/`: Contains all Terraform configuration files (`main.tf`, `variables.tf`, `outputs.tf`) for deploying the AWS infrastructure.
 * `lambda/`: Houses the Python code for the AWS Lambda function (`transformation_function.py`) used in the streaming pipeline.
 * `scripts/`: Includes the Python/PySpark script for the AWS Glue job (`glue_job.py`) used in the batch pipeline.
-* `docs/`: Additional documentation, including the detailed project explanation.
+* `docs/`: Contains architecture diagrams (`de-c1w4-diagram-batch.drawio.png`, `de-c1w4-diagram-stream.drawio.png`) and other documentation.
 
 ## Setup & Deployment:
 
@@ -62,7 +69,7 @@ I designed the system with two distinct yet complementary data flows:
     ```bash
     cd terraform
     terraform init
-    terraform apply 
+    terraform apply
     ```
     (Confirm the deployment when prompted).
 5.  **Verification:** Monitor CloudWatch logs for Lambda and Glue job status. Check S3 buckets for ingested batch data and real-time recommendation outputs.

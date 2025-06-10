@@ -86,6 +86,7 @@ The project is deployed in phases using Terraform modules.
 ---
 
 ## 📂 Project Structure
+```
 .
 ├── images/            # Architectural diagrams and visual assets for documentation.
 ├── scripts/           # Helper and setup shell scripts for the environment.
@@ -98,3 +99,4 @@ The project is deployed in phases using Terraform modules.
         ├── etl/
         ├── vector-db/
         └── streaming-inference/
+```

@@ -4,7 +4,7 @@ This project implements a complete, end-to-end recommendation system using a two
 
 ---
 
-## 🏛️ Architecture
+##  Architecture
 
 The system is logically divided into two primary pipelines that work together to train a model and serve recommendations.
 
@@ -38,7 +38,7 @@ This pipeline uses the model artifacts (the trained model and its embeddings) to
 
 ---
 
-## ✨ Key Features & Technologies
+## Key Features & Technologies
 
 * **Infrastructure as Code:** The entire cloud infrastructure is defined and managed using **Terraform**, ensuring a repeatable, version-controlled, and automated setup.
 * **Serverless ETL:** Leverages **AWS Glue** for scalable, serverless data transformation, avoiding the need to manage Spark clusters.
@@ -49,7 +49,7 @@ This pipeline uses the model artifacts (the trained model and its embeddings) to
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 The project is deployed in phases using Terraform modules.
 

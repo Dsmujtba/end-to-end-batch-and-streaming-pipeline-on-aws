@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS user_emb (id int PRIMARY KEY, embedding vector(32));
 
 SELECT aws_s3.table_import_from_s3(
    'item_emb', 'id,embedding', '(format csv, header true)',
-   'de-c1w4-441075280037-us-east-1-ml-artifacts'
+   '<Bucket_Name>'
    'embeddings/item_embeddings.csv', 
    'us-east-1'
 );
@@ -17,7 +17,7 @@ SELECT aws_s3.table_import_from_s3(
 
 SELECT aws_s3.table_import_from_s3(
    'user_emb', 'id,embedding', '(format csv, header true)',
-   'de-c1w4-441075280037-us-east-1-ml-artifacts',
+   '<Bucket_Name>',
    'embeddings/user_embeddings.csv', 
    'us-east-1'
 );

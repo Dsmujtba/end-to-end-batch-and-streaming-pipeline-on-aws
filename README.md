@@ -85,7 +85,7 @@ The project is deployed in phases using Terraform modules.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```
 .
 ├── images/            # Architectural diagrams and visual assets for documentation.
@@ -95,6 +95,9 @@ The project is deployed in phases using Terraform modules.
     ├── main.tf        # Main entry point for composing the infrastructure modules.
     ├── variables.tf   # Definitions for input variables.
     ├── outputs.tf     # Declarations for infrastructure outputs (e.g., hostnames).
+    ├── assets/        # Source code for compute services deployed by Terraform.
+    │   ├── glue_job/  # Python/PySpark script for the AWS Glue ETL job.
+    │   └── transformation_lambda/ # Python code for the stream transformation Lambda function.
     └── modules/       # Reusable modules for each component of the architecture.
         ├── etl/
         ├── vector-db/
